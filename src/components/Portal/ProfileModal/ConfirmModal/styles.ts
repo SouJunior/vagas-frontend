@@ -97,3 +97,18 @@ export const ModalCloseButton = styled.button`
         color: #fff;
     }
 `;
+
+export const ModalTextConfirmModal = styled.p`
+    font-family: 'Radio Canada';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    padding: 0 0 16px 0;
+
+    color: ${({ theme }) => theme.colors.mutedDarker};
+
+    @media (max-width: 480px) {
+        width: 80%;
+    }
+`;

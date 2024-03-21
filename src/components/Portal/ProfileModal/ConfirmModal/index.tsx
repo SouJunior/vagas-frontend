@@ -1,7 +1,7 @@
 import {
     ModalContent,
     ModalTitle,
-    ModalText,
+    ModalTextConfirmModal,
     CloseModal,
     ModalCloseButton,
 } from './styles';
@@ -22,17 +22,20 @@ const ConfirmModal = ({ setConfirmModal }: ConfirmModalProps) => {
 
     const handleClick = () => {
         setConfirmModal(false);
-        auth.user.type === 'USER' ?
-            (navigate('/candidate-portal'))
-            :
-            (navigate('/company-portal'))
-        setTimeout(() => window.location.reload(), 0)
+        auth.user.type === 'USER'
+            ? navigate('/candidate-portal')
+            : navigate('/company-portal');
+        setTimeout(() => window.location.reload(), 0);
         document.body.style.overflow = 'auto';
-    }
+    };
 
     useEffect(() => {
         const handleOutsideClick = (e: MouseEvent) => {
-            if (modalRef.current && e.target instanceof Node && !modalRef.current.contains(e.target)) {
+            if (
+                modalRef.current &&
+                e.target instanceof Node &&
+                !modalRef.current.contains(e.target)
+            ) {
                 setConfirmModal(false);
                 handleClick();
             }
@@ -52,7 +55,7 @@ const ConfirmModal = ({ setConfirmModal }: ConfirmModalProps) => {
                     <ModalCloseButton
                         /**
                          * @see https://developer.mozilla.org/pt-BR/docs/Web/API/Location/reload
-                        */
+                         */
                         onClick={handleClick}
                     >
                         X
@@ -60,9 +63,9 @@ const ConfirmModal = ({ setConfirmModal }: ConfirmModalProps) => {
                 </CloseModal>
                 <div className="modal--texts">
                     <ModalTitle>Atualizações salvas</ModalTitle>
-                    <ModalText>
+                    <ModalTextConfirmModal>
                         Suas atualizações foram alteradas com sucesso!
-                    </ModalText>
+                    </ModalTextConfirmModal>
                     <img src={ModalIcon} alt="Sucesso" />
                 </div>
             </ModalContent>
