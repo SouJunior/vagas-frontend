@@ -10,7 +10,11 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^2.9.10",
+    "@mui/icons-material": "^5.15.13",
+    "@mui/material": "^5.15.13",
     "@phosphor-icons/react": "^2.0.9",
     "@tiptap/extension-bubble-menu": "^2.0.0-beta.206",
     "@tiptap/extension-bullet-list": "^2.0.0-beta.209",

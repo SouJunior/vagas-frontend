@@ -125,7 +125,6 @@ export const Footer = styled.footer`
     }
 
     @media (max-width: 320px) {
-        position: relative;
         bottom: 700px;
     }
 `;
