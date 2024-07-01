@@ -7,9 +7,7 @@ export const ModalContent = styled.div`
     gap: 20px;
     position: fixed;
     background: white;
-
-    border: 2px solid ${({theme}) => theme.colors.primaryDark};
-    border-radius: 10px;
+    border-radius: 8px;
 
     img {
         width: 30%;
@@ -27,40 +25,31 @@ export const ModalContent = styled.div`
     }
 `;
 
-export const ModalText = styled.p`
-    font-family: 'Radio Canada';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26px;
-    padding: 0 0 16px 0;
-
-    color: ${({theme}) => theme.colors.mutedDarker};
-
-    @media (max-width: 480px) {
-        width: 80%;
-    }
-`;
-
 export const ModalTitle = styled.h2`
     font-family: 'Radio Canada';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 48px;
     padding: 0 0 16px 0;
     color: ${({theme}) => theme.colors.primaryDark};
 
     @media (max-width: 280px) {
-        width: 80%;
-        font-size: 28px;
-        margin-right: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
     }
 
     @media (max-width: 480px) {
-        width: 80%;
+        width: 100%;
         display: flex;
-        margin-right: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
     }
 `;
 

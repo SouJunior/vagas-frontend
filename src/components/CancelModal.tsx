@@ -1,7 +1,7 @@
 interface CancelModalProps {
     handleConfirmCancel: () => void;
     setCancelModal: (value: boolean) => void;
-}
+};
 
 function CancelModal({
     handleConfirmCancel,

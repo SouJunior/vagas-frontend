@@ -28,13 +28,13 @@ const CandidatePortal = () => {
             <Main>
                 <Search />
                 <Row />
-                <h1>{auth.user.name}, atualize seu currículo!</h1>
-                <ProfileButton onClick={() => navigate('/candidate-settings')}>
+                <h1>Olá, {auth.user.name}</h1>
+                {/* <ProfileButton onClick={() => navigate('/candidate-settings')}>
                     <div>
                         <img src={CurriculumImage} alt="currículo" />
                     </div>
                     <div>Atualizar meu currículo</div>
-                </ProfileButton>
+                </ProfileButton> */}
             </Main>
             <Position>
                 <Footer />

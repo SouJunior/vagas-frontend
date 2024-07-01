@@ -8,11 +8,8 @@ export const ModalContent = styled.div`
     padding: 60px 30px;
     gap: 20px;
     position: fixed;
-
-    background: #FDFFFC;
-
-    border: 2px solid ${({ theme }) => theme.colors.primaryDark};
-    border-radius: 10px;
+    background: white;
+    border-radius: 8px;
 
     @media (max-width: 280px) {
         width: 100%;
@@ -25,6 +22,8 @@ export const ModalContent = styled.div`
 
 export const ModalText = styled.p`
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     font-family: 'Radio Canada';
     font-style: normal;
@@ -35,36 +34,52 @@ export const ModalText = styled.p`
     color: ${({ theme }) => theme.colors.mutedDarker};
 
     @media (max-width: 280px) {
-        width: 80%;
-        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
     }
 
     @media (max-width: 480px) {
-        width: 80%;
-        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
     }
 `;
 
 export const ModalTitle = styled.h1`
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 370px;
     height: 48px;
     font-family: 'Radio Canada';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 48px;
     color: ${({ theme }) => theme.colors.primaryDark};
 
     @media (max-width: 280px) {
-        width: 80%;
-        margin-right: 40px;
-        
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
     }
 
     @media (max-width: 480px) {
-        width: 80%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;    
     }
 `;
 

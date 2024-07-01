@@ -37,10 +37,11 @@ export const ProfileSettings: React.FC = () => {
     const [imagePreview, setImagePreview] = useState<Blob | null>(null);
     const [cancelModal, setCancelModal] = useState(false);
     const [confirmModal, setConfirmModal] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const handleCancelModal = (e: any) => {
         e.preventDefault();
-        document.body.style.overflow = 'hidden';
+        setIsModalOpen(false);
         setCancelModal(true);
         window.scrollTo(0, 0);
     };
@@ -212,7 +213,7 @@ export const ProfileSettings: React.FC = () => {
 
             {confirmModal && <ConfirmModal setConfirmModal={setConfirmModal} />}
 
-            {cancelModal && <CancelModal setCancelModal={setCancelModal} />}
+            {cancelModal && <CancelModal setCancelModal={setCancelModal} open={isModalOpen} />}
             <Position>
                 <Main />
                 <Footer />

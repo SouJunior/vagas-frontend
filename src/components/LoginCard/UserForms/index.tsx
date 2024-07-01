@@ -35,6 +35,8 @@ import {
     MessageChecklist,
 } from '../styles';
 import { Popup } from '../PopUpRegisterSuccess/styles';
+import TermsModal from '../../Portal/ProfileModal/TermsModal';
+import PolicyModal from '../../Portal/ProfileModal/PolicyModal';
 
 export const UserForms = (props: any): JSX.Element => {
     const [hasError, setHasError] = useState(false);
@@ -44,8 +46,18 @@ export const UserForms = (props: any): JSX.Element => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const [policyModal, setPolicyModal] = useState<boolean>(false);
+    const [termsModal, setTermsModal] = useState<boolean>(false);
 
 
+    const handlePolicyModal = () => {
+        setPolicyModal(true);
+    };
+
+    const handleTermsModal = () => {
+        setTermsModal(true);
+    };
+    
     const characters = /^(?=.{8,20}$).*$/;
     const letters = /^(?=.*[a-z])(?=.*[A-Z]).*$/;
     const number = /^(?=.*\d).*$/;
@@ -362,8 +374,8 @@ export const UserForms = (props: any): JSX.Element => {
                             <CheckboxInput {...register('privacyTerms')} />
                             <TermsLink>
                                 {/* TODO: Direcionar para as páginas correspondentes após criadas */}
-                                Li e aceito os <a href="/">Termos de Uso</a> e{' '}
-                                <br /> <a href="/">Política de Privacidade</a>
+                                Li e aceito os <a onClick={handleTermsModal}>Termos de Uso</a> e{' '}
+                                <br /> <a onClick={handlePolicyModal}>Política de Privacidade</a>
                             </TermsLink>
                         </Label>
                         {hasError && (
@@ -405,6 +417,8 @@ export const UserForms = (props: any): JSX.Element => {
                 />
             ) : null}
             <PopupHandler setPopup={setPopup} Popup={Popup} />
+            {termsModal && <TermsModal setTermsModal={setTermsModal} />}
+            {policyModal && <PolicyModal setPolicyModal={setPolicyModal} />}
         </>
     );
 };

@@ -58,6 +58,7 @@ export const CandidateSettings: React.FC = () => {
     const [fileKey2, setFileKey2] = useState<string>();
     const [fileUrl1, setFileUrl1] = useState<string>();
     const [fileUrl2, setFileUrl2] = useState<string>();
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const {
         register,
@@ -75,7 +76,10 @@ export const CandidateSettings: React.FC = () => {
     useEffect(() => {
         const userCurriculum = () => {
             const curriculums = auth.user.curriculums;
-
+            if (curriculums == null) {
+                return;
+            }
+            
             if (curriculums[0]) {
                 const userCurriculum1 = curriculums[0];
                 setFileKey1(userCurriculum1.fileKey);
@@ -181,11 +185,9 @@ export const CandidateSettings: React.FC = () => {
         setFileKey2(undefined);
     };
 
-    // Função do modal de cancelamento
-
     const handleCancelModal = (e: any) => {
         e.preventDefault();
-        document.body.style.overflow = 'hidden';
+        setIsModalOpen(false);
         setCancelModal(true);
         window.scrollTo(0, 0);
     };
@@ -488,7 +490,7 @@ export const CandidateSettings: React.FC = () => {
                 </ExtraLine>
             </form>
             {confirmModal && <ConfirmModal setConfirmModal={setConfirmModal} />}
-            {cancelModal && <CancelModal setCancelModal={setCancelModal} />}
+            {cancelModal && <CancelModal setCancelModal={setCancelModal} open={isModalOpen} />}
             <Position>
                 <Main />
                 <Footer />

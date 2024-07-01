@@ -44,7 +44,7 @@ const Menu = () => {
         <Container>
             <PopUp>
                 <MenuItems>
-                    <li onClick={handleNavigation}
+                    {/* <li onClick={handleNavigation}
                         onKeyDown={handleKeyDown}
                         tabIndex={0}
                     >
@@ -53,7 +53,7 @@ const Menu = () => {
                         Meu perfil
                     </li>
 
-                    <Border />
+                    <Border /> */}
 
                     {auth.user.type !== 'USER' && (
                         <li
@@ -66,7 +66,7 @@ const Menu = () => {
                             Anunciar vagas
                         </li>
                     )}
-                    <Border />
+                    {/* <Border /> */}
                     <li
                         onClick={() => {
                             setVisible(!visible);
@@ -89,6 +89,7 @@ const Menu = () => {
                                 <li
                                     tabIndex={0}
                                     onKeyDown={handleKeyDown}
+                                    onClick={() => navigate('/change-password')}
                                 >
                                     <img
                                         src={PasswordIcon}
@@ -99,14 +100,14 @@ const Menu = () => {
                             </div>
                         </>
                     )}
-                    <Border />
+                    {/* <Border />
                     <li
                         tabIndex={0}
                         onKeyDown={handleKeyDown}
                     >
                         <img src={TermsIcon} alt="termos" />
                         Termo de uso e Privacidade
-                    </li>
+                    </li> */}
                     <Border />
                     <li onClick={logout}
                         onKeyDown={handleKeyDown}

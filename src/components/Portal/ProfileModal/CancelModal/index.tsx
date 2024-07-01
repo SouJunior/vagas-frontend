@@ -7,6 +7,7 @@ import { useContext } from 'react';
 
 interface CancelModalProps {
     setCancelModal: (value: boolean) => void;
+    open: boolean;
 }
 
 function CancelModal({ setCancelModal }: CancelModalProps) {
